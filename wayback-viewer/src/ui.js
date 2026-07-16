@@ -34,6 +34,14 @@ export function initUI(handlers) {
     });
   }
   
+  // Tomas Oppus button
+  const tomasOppsBtn = document.getElementById('tomas-opps-btn');
+  if (tomasOppsBtn) {
+    tomasOppsBtn.addEventListener('click', () => {
+      handlers.onTomasOppus?.();
+    });
+  }
+  
   // Previous/Next buttons
   const prevBtn = document.getElementById('prev-btn');
   const nextBtn = document.getElementById('next-btn');

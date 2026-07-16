@@ -20,7 +20,7 @@ export function initTimeline() {
  * Render the timeline with releases
  */
 export function renderTimeline(releases) {
-  if (!timelineElement) return;
+  if (!timelineElement || !yearDropdown) return;
   
   const data = getReleasesByYear();
   const { years, grouped } = data;
@@ -36,6 +36,11 @@ export function renderTimeline(releases) {
     option.textContent = year;
     yearDropdown.appendChild(option);
   });
+  
+  // Set first year as default if available
+  if (years.length > 0) {
+    yearDropdown.value = years[0];
+  }
   
   // Create timeline visualization
   const timelineViz = document.createElement('div');

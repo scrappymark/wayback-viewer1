@@ -76,6 +76,7 @@ function setupEventHandlers() {
     onSearch: handleSearch,
     onGeolocation: handleGeolocation,
     onDarkMode: handleDarkMode,
+    onTomasOppus: handleTomasOppus,
     onPrevious: handlePreviousRelease,
     onNext: handleNextRelease,
     onOpacityChange: handleOpacityChange,
@@ -115,6 +116,14 @@ async function handleSearch(query) {
  */
 function handleGeolocation() {
   locateUser();
+}
+
+/**
+ * Handle Tomas Oppus navigation
+ */
+function handleTomasOppus() {
+  goToTomasOppus();
+  showToast('Jumping to Tomas Oppus, Philippines 📍', 'info');
 }
 
 /**
