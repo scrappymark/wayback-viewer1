@@ -48,15 +48,6 @@ export function initMap() {
     imperial: true
   }).addTo(map);
 
-  // Add fullscreen control
-  L.control.fullscreen({
-    position: 'topright',
-    title: {
-      'false': 'View Fullscreen',
-      'true': 'Exit Fullscreen'
-    }
-  }).addTo(map);
-
   // Add coordinates display
   const coordinatesControl = L.control({ position: 'bottomleft' });
   coordinatesControl.onAdd = function() {
@@ -75,15 +66,6 @@ export function initMap() {
       `Lat: ${e.latlng.lat.toFixed(4)}, Lng: ${e.latlng.lng.toFixed(4)}`
     );
   });
-
-  // Mini map
-  setTimeout(() => {
-    miniMap = L.control.minimap(L.tileLayer(config.tiles.latest), {
-      position: 'bottomright',
-      toggleDisplay: true,
-      minimized: false
-    }).addTo(map);
-  }, 500);
 
   return map;
 }
