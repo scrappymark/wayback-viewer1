@@ -12,7 +12,7 @@ export const config = {
   wayback: {
     baseUrl: 'https://wayback.maptiles.arcgis.com',
     imageryService: 'https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer',
-    releasesEndpoint: '/arcgis/rest/services/Wayback/WorldImagery/MapServer/resources/dates'
+    releasesEndpoint: '/arcgis/rest/services/Wayback/WorldImagery/MapServer?f=json'
   },
 
   // Tile sources

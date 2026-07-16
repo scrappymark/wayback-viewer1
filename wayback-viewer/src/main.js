@@ -252,8 +252,8 @@ function loadRelease(release) {
   const metadata = getReleaseMetadata(release);
   renderMetadata(metadata);
   
-  // Load imagery
-  loadWaybackImagery(release.url);
+  // Load imagery - pass the entire release object, not just URL
+  loadWaybackImagery(release);
   
   console.log(`🗺️ Loaded release: ${release.name}`);
 }

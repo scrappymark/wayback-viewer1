@@ -5,34 +5,30 @@ node_modules/
 # Build artifacts
 dist/
 build/
-*.js.map
+*.min.js
+*.bundle.js
 
 # Environment
 .env
 .env.local
-*.env.*
+.env.*
 
 # Editors
 .vscode/
 .idea/
-
-# Logs and temp files
-*.log
-*.tmp
 *.swp
+*.swo
 
-# Python
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
+# Logs
+*.log
 
 # Coverage
 coverage/
 htmlcov/
 .coverage
 
-# OS
-.DS_Store
+# Temporary files
+*.tmp
 Thumbs.db
+.DS_Store
 ```
