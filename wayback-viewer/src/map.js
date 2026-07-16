@@ -73,8 +73,8 @@ export function initMap() {
 /**
  * Load Wayback imagery for a specific release
  */
-export function loadWaybackImagery(releaseUrl) {
-  if (!releaseUrl) return;
+export function loadWaybackImagery(release) {
+  if (!release) return;
 
   showLoading(true);
 
@@ -83,8 +83,11 @@ export function loadWaybackImagery(releaseUrl) {
     map.removeLayer(imageryLayer);
   }
 
+  // Use the imageUrl from the release object, or fall back to latest
+  const tileUrl = release.imageUrl || config.tiles.latest;
+  
   // Create new tile layer with Wayback URL
-  imageryLayer = L.tileLayer(releaseUrl + '/tile/{z}/{y}/{x}', {
+  imageryLayer = L.tileLayer(tileUrl, {
     attribution: '© Esri Wayback Imagery',
     opacity: parseFloat(document.getElementById('opacity-slider')?.value || 100) / 100
   });
